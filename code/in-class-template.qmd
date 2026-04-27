@@ -1,0 +1,6 @@
+---
+title: "in-class-template"
+author: "Stella Freedberg"
+format: pdf
+---
+
