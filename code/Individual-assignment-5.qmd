@@ -164,3 +164,23 @@ aq_ins_clean <- aq_ins |>
 - y-axis: log + 1 transformed average abundance/L
 - geom to represent average abundance/L: geom_jitter()
 - geom to represent medians: stat_summary()
+
+## b) 
+
+```{r}
+#| label: wrangle-aq-ins-clean
+#| message: false
+#| warning: false
+
+# creating new object from clean aquatic inverts 
+ostracod <- aq_ins_clean |> 
+  # filter to only include ostracod
+  filter(taxon == "ostracod") |> 
+  # log + 1 transform mean abundance per liter
+  mutate(log_ave_lit = log(ave_lit + 1)) 
+
+ostracod |> 
+  slice_sample(n = 10)
+
+```
+
