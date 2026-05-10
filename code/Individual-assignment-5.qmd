@@ -155,3 +155,12 @@ aq_ins_clean <- aq_ins |>
   ))
 
 ```
+
+# 1. Visulaizing differences across sites in major taxon abundance 
+
+## a)
+
+- x-axis: site 
+- y-axis: log + 1 transformed average abundance/L
+- geom to represent average abundance/L: geom_jitter()
+- geom to represent medians: stat_summary()
