@@ -350,3 +350,28 @@ aq_ins_salinity |>
 
 ```
 
+## c)
+
+```{r}
+#| label: code-your-figure
+
+salinity_taxa <- ggplot(data = aq_ins_salinity,
+                        mapping = aes(x = med_sal,
+                                      y = log_ave_lit,
+                                      color = taxon)) +
+  geom_point() +
+  # separate panel for each taxon
+  facet_wrap(~ taxon, scales = "free") +
+  # custom colors 
+  scale_color_brewer(palette = "Dark2") +
+  # labels
+  labs(x = "Median salinity (ppt)",
+       y = "log + 1 transformed average abundance/L") +
+  # remove legend
+  theme_bw() +
+  theme(legend.position = "none")
+
+# display figure
+salinity_taxa
+```
+
