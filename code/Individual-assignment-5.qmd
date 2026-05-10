@@ -91,9 +91,9 @@ taxon_list_clean <- taxon_list |>
 water_quality_clean <- water_quality |> 
   # clean column names
   clean_names() |> 
-  # filtering join: only include sites in ncos_sites
+  # filtering join to only include sites in ncos
   semi_join(ncos_sites, by = "site") |> 
-  # create new column to join with later data frames
+  # create new column to join with data frames
   unite("date_site", date, site, remove = TRUE) |> 
   # group by date_site column
   group_by(date_site) |> 
@@ -270,8 +270,6 @@ ostracod |>
 
 # base layer
 ostracod_plot <- ggplot(data = ostracod,
-                   # x-axis: site
-                   # y-axis: mean abundance/L
                    mapping = aes(x = site_full,
                                  y = log_ave_lit)) +
   # first layer: points to represent observations
@@ -354,6 +352,7 @@ aq_ins_salinity |>
 
 ```{r}
 #| label: code-your-figure
+#| warning: false
 
 salinity_taxa <- ggplot(data = aq_ins_salinity,
                         mapping = aes(x = med_sal,
@@ -375,3 +374,6 @@ salinity_taxa <- ggplot(data = aq_ins_salinity,
 salinity_taxa
 ```
 
+## d)
+
+For Annelida Polychaete, Annelida Oligochaete, and Nematode, not much can be said for the relationship between abundance and salinity due to a lack of data. For Copepod and Ostracods it seems that both species are the most abundant at low mean salinities. It also seems that Copepods are more resiliant to higher salinities because their abundance remains high even past 60 ppt while Ostracod abundance decreases. Diptera Chironomid are only abundant at low salinities and Boatmen have similar abundances across all salinities.
