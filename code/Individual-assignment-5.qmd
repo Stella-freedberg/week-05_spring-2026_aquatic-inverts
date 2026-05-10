@@ -310,3 +310,8 @@ salinity / (copepods + ostracod_plot)
 
 ```
 
+## e) 
+
+Copepods are more abundant than ostracods at these sites: Devreux Creek, North of Venoco Bridge, Phelps Road, and South of Venoco Bridge. 
+
+It does not appear that ostracod abundance relates to site-level differences in salinity. At South of Venoco Bridge salinity is high while abundance is low however at North of Venoco Bridge both salinity and abundance are high. 
