@@ -321,7 +321,7 @@ It does not appear that ostracod abundance relates to site-level differences in 
 - x-axis: med_sal
 - y-axis: log_ave_lit
 - color: taxon
-- geometry: geom_jitter()
+- geometry: geom_point()
 - facets: facet_wrap( ~ taxon, scales = "free")
 
 ## b) 
