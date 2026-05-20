@@ -336,7 +336,9 @@ aq_ins_salinity <- aq_ins_clean |>
   # create log + 1 transformed average abundance per liter
   mutate(log_ave_lit = log(ave_lit + 1),
          # make taxon names title case
-         taxon = str_to_title(taxon)) |>
+         taxon = taxon |> 
+           str_replace_all("_", " ") |> 
+         str_to_title() )|>
   # order taxon levels by maximum abundance
   mutate(taxon = fct_reorder(taxon, ave_lit, .fun = max, .desc = TRUE)) |>
   # keep columns needed for figure
