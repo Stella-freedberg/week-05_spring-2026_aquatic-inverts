@@ -355,6 +355,8 @@ aq_ins_salinity |>
 ```{r}
 #| label: code-your-figure
 #| warning: false
+#| fig-height: 5
+#| fig-width: 7
 
 salinity_taxa <- ggplot(data = aq_ins_salinity,
                         mapping = aes(x = med_sal,
